@@ -107,17 +107,17 @@ async function run() {
       res.send(result);
     });
 
-    // ! Get all volunteers posted by a specific user
-    app.get("/volunteers/:email", verifyToken, async (req, res) => {
-      const tokenEmail = req.user.email;
-      const email = req.params.email;
-      if (tokenEmail !== email) {
-        return res.status(403).send({ message: "forbidden access" });
-      }
-      const query = { "buyer.email": email };
-      const result = await volunteerCollection.find(query).toArray();
-      res.send(result);
-    });
+    // // ! Get all volunteers posted by a specific user
+    // app.get("/volunteers/:email", verifyToken, async (req, res) => {
+    //   const tokenEmail = req.user.email;
+    //   const email = req.params.email;
+    //   if (tokenEmail !== email) {
+    //     return res.status(403).send({ message: "forbidden access" });
+    //   }
+    //   const query = { "buyer.email": email };
+    //   const result = await volunteerCollection.find(query).toArray();
+    //   res.send(result);
+    // });
 
     // ! Save a volunteers data in database
     app.post("/volunteerpost", async (req, res) => {
