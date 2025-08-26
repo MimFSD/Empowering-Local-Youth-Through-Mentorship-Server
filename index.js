@@ -209,6 +209,7 @@ async function run() {
     });
 
     // ! Get all volunteers data count from db for pagination
+    
     app.get("/volunteer-count", async (req, res) => {
       const search = req.query.search;
       const filter = req.query.filter;
@@ -224,7 +225,7 @@ async function run() {
         res.status(500).send("Internal Server Error");
       }
     });
-
+// ! Get all volunteers data count from db for pagination
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(
