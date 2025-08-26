@@ -240,4 +240,4 @@ app.get("/", (req, res) => {
   res.send("Hello from SoloSphere Server....");
 });
 
-app.listen(port, () => console.log(`Server runnign on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
